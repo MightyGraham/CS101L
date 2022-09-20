@@ -9,7 +9,7 @@
 #6) Use modulus (%) to find the remainder user's number when divided by 5 and 7
 #7)Since the remainders when divided by 5 and 7 can be different, we do not need an If loop
 #8)Show the number the user inputed
-#9)If user wants wants to play again, then return entire loop
+#9)If user wants wants to play again, then use continue to loop game again
 #10) If user wants to stop, then set game to false
 
   
