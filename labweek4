@@ -1,66 +1,73 @@
-
-## CS 101 Lab
-## Program 4
-## Nate Graham
-## njg96b@umsystem.edu
-##
-## PROBLEM : Create or simulate a slot machine with 3 reels rangeng from 1-10
-##
-## ALGORITHM : 
-##1. Start
-##2.
-##3.
-##4.
-## ERROR HANDLING:
-##      Any Special Error handling to be noted.  Wager not less than 0. etc
-##
-## OTHER COMMENTS:
-##      Any special comments
-
-
-#import modules needed
-
+import random
 
 def play_again() -> bool:
-        ''' Asks the user if they want to play again, returns False if N or NO, and 
-        True if Y or YES.  Keeps asking until they respond yes '''
-    try_again = input("Do you want to try again? Type Y or Yes, N or No.")
-    if try_again == 'Y' or play_again == 'YES' :
-        return True
-    elif try_again == 'N' or play_again == 'NO' :
-        return False
-    else:
-        print("enountered an error, try again"
-        try_again = input("Do you want to try again? Type Y or Yes, N or No.")
-    return play_again
-print(play_again)
+        ''' Asks the user if they want to play again, returns False if N or NO, and True if Y or YES.  Keeps asking until they respond yes '''
+        playing = input("Do you want to try again? Type Y or Yes, N or No.")
+        if playing == 'Y' or play_again == 'YES' :
+            return True
+        elif playing == 'N' or play_again == 'NO' :
+            return False
+        else:
+            print("An error has occured, must type Y/YES or N/NO. Try again")
+            playing = input("Do you want to try again? Type Y or Yes, N or No.")
+        return play_again()
+print(play_again())
     
      
 def get_wager(bank : int) -> int:
     ''' Asks the user for a wager chip amount.  Continues to ask if they result is <= 0 or greater than the amount they have '''
-    chip = int(input("How much do you wish to wager?"))
-    if chip
-    
-    return 1            
+    wager = int(input("How much do you wish to wager?"))
+    if wager >= 0 and wager <= bank:
+        print(f'You have wagered {wager}, do want to go more?')
+        return 1
+    else:
+        print("An error has occured, value cannot be under zero or over bank amount. Try Again.")
+        wager = int(input("How much do you wish to wager?"))
+    return get_wager()
+print(get_wager())
 
 def get_slot_results() -> tuple:
     ''' Returns the result of the slot pull '''
-
-    return 1, 2, 3
+    reel1 = random.randint(1, 10) 
+    reel2 = random.randint(1, 10) 
+    reel3 = random.randint(1, 10) 
+    return reel1, reel2, reel3
+print(get_slot_results(), end=',')
 
 def get_matches(reela, reelb, reelc) -> int:
     ''' Returns 3 for all 3 match, 2 for 2 alike, and 0 for none alike. '''
-
-    return 0
+    #FIXME
+    if reela == reelb and reela == reelc and reelb == reelc:
+        return 3
+    elif reela == reelb or reela == reelc or reelb == reelc:
+        return 2
+    else:
+        return 0
+print(get_matches())
 
 def get_bank() -> int:
-    ''' Returns how many chips the user wants to play with.  Loops until a value greater than 0 and less than 101 '''
 
-    return 0
+    ''' Returns how many chips the user wants to play with.  Loops until a value greater than 0 and less than 101 '''
+    bank = int(print('How many chips do you want to play with? Enter value between 0 and 101'))
+    if bank <= 0:
+        print("Error: Value can't be under 0. Try again")
+        bank = int(print('How many chips do you want to play with? Enter value between 0 and 101'))
+    elif bank >= 101:
+        print("Error: Value can't be under 0. Try again")
+        bank = int(print('How many chips do you want to play with? Enter value between 0 and 101'))
+    else:
+        return bank
+print(get_bank())
 
 def get_payout(wager, matches):
     ''' Returns how much the payout is.. 10 times the wager if 3 matched, 3 times the wager if 2 match, and negative wager if 0 match '''
-    return wager * -1     
+    if matches == 0:
+        return wager * -1
+    elif matches == 2:
+        return wager * 3
+    else:
+        return wager * 10
+print(get_payout())
 
 
 if __name__ == "__main__":
