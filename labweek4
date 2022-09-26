@@ -1,6 +1,6 @@
 import random
 
-def play_again() -> bool:
+def play_again() -> bool: #FIXME
         ''' Asks the user if they want to play again, returns False if N or NO, and True if Y or YES.  Keeps asking until they respond yes '''
         playing = input("Do you want to try again? Type Y or Yes, N or No.")
         if playing == 'Y' or play_again == 'YES' :
