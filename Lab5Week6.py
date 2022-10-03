@@ -30,7 +30,7 @@ def get_grade():
     else:
         grade = "Invalid Grade" #If number isnt between 1 and 4, display invalid grade
     return grade
-print(f' This care belongs to 'get_grade())
+print(f' This card belongs to a', get_grade())
 
 def character_value(val):
     # character -> unicode integer ord()
@@ -49,8 +49,17 @@ def verify_check_digit():
         if len(ID_card) == 10: #Check if ID card is length of 10 characters 
             continue
         elif len(ID_card) != 10:
-            print("False, length of ID given must be 10")
-        #if ID_card.is
-        '''FIXME figure how to check first 5 characters are letters
-                and the last 3 characters are numbers'''
+            print("False, length of ID given must be 10.")
+        ID_Card = ID_card.split()#split characters individually
+        if ID_Card.isalpha(0) and ID_Card.isalpha(1) and ID_Card.isalpha(1) and ID_Card.isalpha(2) and ID_Card.isalpha(3) and ID_Card.isalpha(4):
+            continue #if the first 5 characters are in the alphabet, then continue on
+        else:
+            print("False, the first five characters are not letters.")
+        if ID_Card.isdigit(7) and ID_Card.isdigit(8) and ID_Card.isdigit(9):
+            return ID_Card
+        else:
+            print("False, the first five characters are not letters.")
             
+
+        
+        
