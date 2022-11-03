@@ -1,0 +1,22 @@
+import csv
+import math
+#i means initial
+#find where speed reaches 0, "throw it out"
+#find where 1st point "crosses"
+#distance: square root of (x2 - x1) **2 + (y2 - y1)**2
+#for loop: (xi + 1 - xi)
+#when x > xi
+#then for loop that starts at first row
+
+
+
+with open('_GPS.csv') as distance:
+    reader = csv.reader(distance)
+    for row in reader:
+        initialX = row[3]
+        initialY = row[2]
+        speed = row[5]
+        distance = 
+        print(distance)
+        if x > initialX:
+            print(x)
