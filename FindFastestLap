@@ -8,15 +8,19 @@ import math
 #when x > xi
 #then for loop that starts at first row
 
-
-
 with open('_GPS.csv') as distance:
     reader = csv.reader(distance)
     for row in reader:
-        initialX = row[3]
-        initialY = row[2]
+        initial_Latitude = '43.07297'
+        initial_Longitude = '-77.1718'
+        X = row[2]
+        Y = row[3]
+        time = row[0]
         speed = row[5]
-        distance = 
-        print(distance)
-        if x > initialX:
-            print(x)
+        #total = initialX + 1 - initialX
+        if X > initial_Latitude:
+            print(X)
+            if time > '614':
+                pass
+            
+        
